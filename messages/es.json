@@ -1,0 +1,52 @@
+{
+    "LandingPage":{
+      "header": {
+        "title": "(title es.json)",
+        "features": "(features)",
+        "pricing": "(pricing)",
+        "contact": "(contact)"
+      },
+      "hero": {
+        "title": "(hero.title)",
+        "subtitle": "La mejor solución para tus necesidades",
+        "cta": "Comienza ahora"
+      },
+      "features": {
+        "title": "Por qué elegirnos",
+        "feature1": {
+          "title": "Fácil de usar",
+          "description": "Nuestra plataforma es intuitiva y fácil de navegar."
+        },
+        "feature2": {
+          "title": "Seguridad garantizada",
+          "description": "Tus datos están protegidos con nosotros."
+        },
+        "feature3": {
+          "title": "Soporte 24/7",
+          "description": "Estamos aquí para ayudarte en cualquier momento."
+        }
+      },
+      "footer": {
+        "text": "© {year} Mi Aplicación. Todos los derechos reservados."
+      },
+      "testimonials": {
+        "title": "Lo que nuestros clientes dicen",
+        "list": [
+          {
+            "name": "Nombre del Cliente 1",
+            "feedback": "Este es un testimonio increíble sobre tu producto o servicio."
+          },
+          {
+            "name": "Nombre del Cliente 2",
+            "feedback": "La calidad es fantástica, y el servicio al cliente es excelente."
+          },
+          {
+            "name": "Nombre del Cliente 3",
+            "feedback": "Realmente recomendaría este servicio a cualquiera."
+          }
+        ]
+      }
+    
+    }
+    
+  }
