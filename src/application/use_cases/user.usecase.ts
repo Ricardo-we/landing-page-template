@@ -1,8 +1,9 @@
 import { User } from "@/src/domain/entities/user/user";
 import { IUser } from "@/src/domain/entities/user/user.d";
 import { IUserRepository } from "@/src/domain/repositories/user.repository";
+import { IUserUseCase } from "./iuser.usecase";
 
-export class UserUseCase {
+export class UserUseCase implements IUserUseCase {
   constructor(private readonly userRepository: IUserRepository) {}
 
   async register(userData: Partial<IUser>): Promise<User> {

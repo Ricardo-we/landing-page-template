@@ -1,11 +1,16 @@
 import { Image, StyleSheet, Platform } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { HelloWave } from '@/src/components/HelloWave';
+import ParallaxScrollView from '@/src/components/ParallaxScrollView';
+import { ThemedText } from '@/src/components/ThemedText';
+import { ThemedView } from '@/src/components/ThemedView';
+import { cleanComponent } from '@/src/core/clean-component';
+import { UserFirebaseRepository } from '@/src/infrastructure/firebase/user-firebase.repository';
+import { UserUseCase } from '@/src/application/use_cases/user.usecase';
+import { IUserRepository } from '@/src/domain/repositories/user.repository';
+import { IUserUseCase } from '@/src/application/use_cases/iuser.usecase';
 
-export default function HomeScreen() {
+ function HomeScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -72,3 +77,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 });
+
+
+export default cleanComponent<IUserRepository, IUserUseCase>({
+  repositoryInstance: new UserFirebaseRepository(),
+  useCase: UserUseCase,
+  component: HomeScreen
+})

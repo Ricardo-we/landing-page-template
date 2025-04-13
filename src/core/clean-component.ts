@@ -8,16 +8,15 @@ import { CleanViewProps } from './clean-view';
  * @param useCase - The use case to be used
  * @returns The clean container
  */
-export function createCleanComponent<R,U>({
-    repository,
+export function cleanComponent<R,U>({
+    repositoryInstance,
     useCase, 
     component
 }: {
-    repository: new () => R
+    repositoryInstance: R
     useCase: new (repository: R) => U
-    component: React.ComponentType<CleanViewProps>
+    component: React.ComponentType<CleanViewProps>,
 }) {
-    const repositoryInstance = new repository();
     const useCaseInstance = new useCase(repositoryInstance);
     
     return React.createElement(component, { useCase: useCaseInstance });
